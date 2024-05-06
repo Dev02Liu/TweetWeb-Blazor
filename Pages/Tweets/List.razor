@@ -1,17 +1,19 @@
 ﻿@using MediatR
 @inject IMediator Mediator
 
-<h3>Tweets</h3>
-
 <PostNew OnPosted="LoadTweets" />
 
-@foreach (var tweet in _tweets)
+@if (_tweets != null)
 {
-	<Tweet Text="@tweet" />
+	@foreach (var tweet in _tweets)
+	{
+		<Tweet Text="@tweet" />
+	}
 }
 
+
 @code {
-	private List<string> _tweets;
+	private List<string?>? _tweets;
 
 	protected override async Task OnInitializedAsync()
 	{

@@ -10,7 +10,7 @@ namespace TweetWeb.Pages.Features.Tweets
 	{
 		public class Command : IRequest
 		{
-			public string Contents { get; set; }
+			public string? Contents { get; set; }
 		}
 
 		public class CommandHandler : AsyncRequestHandler<Command>

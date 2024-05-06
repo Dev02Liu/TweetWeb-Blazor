@@ -3,11 +3,11 @@
 @inject IMediator Mediator
 
 <EditForm OnValidSubmit="@HandleSubmit" Model="@command" class="mb-3">
-	<div class="form-group">
+	<div class="form-group ">
 		<InputTextArea @bind-Value="@command.Contents"
 					   class="form-control" />
 	</div>
-	<button type="submit" class="btn btn-primary">
+	<button type="submit" class="btn btn-primary mt-3">
 		Tweet it!
 	</button>
 </EditForm>
@@ -22,5 +22,8 @@
 	{
 		await Mediator.Send(command);
 		await OnPosted.InvokeAsync(EventArgs.Empty);
+
+		// Clear the textarea
+		command.Contents = string.Empty;
 	}
 }

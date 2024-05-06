@@ -16,7 +16,7 @@ namespace TweetWeb.Pages.Features.Tweets
 
         public class Model
         {
-            public List<string>? Tweets { get; set; }
+            public List<string?>? Tweets { get; set; }
         }
 
 		public class QueryHandler : IRequestHandler<Query, Model>

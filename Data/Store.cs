@@ -7,10 +7,6 @@ namespace TweetWeb.Data
 	{
 		public IList<Tweet> Tweets { get; set; } = new List<Tweet>
 		{
-			new Tweet
-			{
-				Contents = "One from the backend"
-			}
 		};
 
 		public void Add(Tweet tweet)
